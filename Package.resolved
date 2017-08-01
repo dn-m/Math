@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "Structure",
-        "repositoryURL": "/Users/BEAN/dn-m/Frameworks/Structure",
+        "repositoryURL": "https://github.com/dn-m/Structure",
         "state": {
-          "branch": "flat",
-          "revision": "b8054997ec7ad9685db0a6754bea8149e472f60a",
+          "branch": "master",
+          "revision": "7ff248ef8d5f622852b686a01a9473c1e46ff5e2",
           "version": null
         }
       }

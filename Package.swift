@@ -7,7 +7,7 @@ let package = Package(
     name: "Math",
     products: [.library(name: "Math", targets: ["Math"])],
     dependencies: [
-        .package(url: "../Structure", .branch("flat")),
+        .package(url: "https://github.com/dn-m/Structure", .branch("master")),
     ],
     targets: [
         .target(name: "Math", dependencies: ["Structure"]),
