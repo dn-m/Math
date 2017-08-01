@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Math",
     dependencies: [
-        .package(url: "https://github.com/dn-m/Structure", .branch("flat")),
+        .package(url: "../Structure", .branch("flat")),
     ],
     targets: [
         .target(name: "Math", dependencies: ["Structure"]),

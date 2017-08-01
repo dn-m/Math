@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "Structure",
-        "repositoryURL": "https://github.com/dn-m/Structure",
+        "repositoryURL": "/Users/BEAN/dn-m/Frameworks/Structure",
         "state": {
           "branch": "flat",
           "revision": "9ee16ee717c99419daefc49fbf93c63fcf03f0f3",
