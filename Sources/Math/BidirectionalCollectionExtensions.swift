@@ -10,13 +10,11 @@ import Algebra
 
 extension BidirectionalCollection where Element: SignedNumeric & Comparable {
 
-    /**
-     Get the closest value in Array to target value.
-
-     - parameter target: Value to check for closest component
-
-     - returns: Value closest to target is !self.isEmpty. Otherwise nil.
-     */
+    /// Get the closest value in Array to target value.
+    ///
+    /// - Parameter target: Value to check for closest component
+    ///
+    /// - Returns: Value closest to target is !self.isEmpty. Otherwise nil.
     public func closest(to target: Element) -> Element? {
 
         guard !self.isEmpty else {
@@ -39,7 +37,7 @@ extension BidirectionalCollection where Element: SignedNumeric & Comparable {
 
 extension BidirectionalCollection where Element: FloatingPoint & Additive, IndexDistance == Int {
 
-    /// - returns: Average of all values contained herein, if there are more than 0 elements.
+    /// - Returns: Average of all values contained herein, if there are more than 0 elements.
     /// Otherwise, `nil`.
     public var mean: Iterator.Element? {
         return isEmpty ? nil : sum / Element(count)
