@@ -1,3 +1,2 @@
 # Math
-
-A description of this package.
+Helpful mathematical tools for music and graphics
