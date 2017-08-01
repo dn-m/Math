@@ -1,6 +1,6 @@
 //
 //  Vector2.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 6/4/17.
 //  Copyright © 2017 James Bean. All rights reserved.

@@ -1,13 +1,13 @@
 //
 //  ModuloTests.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 1/8/17.
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
 import XCTest
-import ArithmeticTools
+import Math
 
 class ModuloTests: XCTestCase {
 

@@ -1,6 +1,6 @@
 //
 //  FloatWrapping.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 5/10/16.
 //  Copyright © 2016 James Bean. All rights reserved.
@@ -62,7 +62,7 @@ public func < <T: FloatWrapping>(lhs: Float, rhs: T) -> Bool {
     return lhs < rhs.value
 }
 
-// MARK: - Arithmetic
+// MARK: - Math
 public func + <T: FloatWrapping>(augend: T, addend: T) -> T {
     return T(floatLiteral: augend.value + addend.value)
 }

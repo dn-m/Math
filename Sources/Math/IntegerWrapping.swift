@@ -1,6 +1,6 @@
 //
 //  IntegerWrapping.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 1/2/17.
 //  Copyright © 2017 James Bean. All rights reserved.
@@ -56,7 +56,7 @@ public func < <T: IntegerWrapping>(lhs: Int, rhs: T) -> Bool {
     return lhs < rhs.value
 }
 
-// MARK: - Arithmetic
+// MARK: - Math
 public func + <T: IntegerWrapping>(augend: T, addend: T) -> T {
     return T(integerLiteral: augend.value + addend.value)
 }

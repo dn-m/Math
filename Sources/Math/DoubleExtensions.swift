@@ -1,6 +1,6 @@
 //
 //  DoubleExtensions.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by Brian Heim on 6/26/17.
 //  Copyright © 2017 James Bean. All rights reserved.

@@ -1,13 +1,13 @@
 //
 //  IsPowerOfTwoTests.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by Brian Heim on 12/11/16.
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
 import XCTest
-@testable import ArithmeticTools
+@testable import Math
 
 class IsPowerOfTwoTests: XCTestCase {
 

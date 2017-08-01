@@ -1,13 +1,13 @@
 //
 //  SequenceTypeTests.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 2/18/16.
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
 import XCTest
-@testable import ArithmeticTools
+@testable import Math
 
 class SequenceTypeTests: XCTestCase {
 

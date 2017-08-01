@@ -1,14 +1,14 @@
 //
 //  LinearRegressionTests.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 11/8/16.
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
 import XCTest
-import Algebra
-import ArithmeticTools
+import Structure
+import Math
 
 class LinearRegressionTests: XCTestCase {
 

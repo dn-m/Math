@@ -1,6 +1,6 @@
 //
 //  BinaryFloatingPointExtensions.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 5/7/17.
 //  Copyright © 2017 James Bean. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  Functions.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 2/16/16.
 //  Copyright © 2016 James Bean. All rights reserved.

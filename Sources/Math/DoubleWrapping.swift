@@ -1,6 +1,6 @@
 //
 //  DoubleWrapping.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 7/24/17.
 //  Copyright © 2017 James Bean. All rights reserved.
@@ -8,7 +8,7 @@
 
 //
 //  DoubleWrapping.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 5/10/16.
 //  Copyright © 2016 James Bean. All rights reserved.
@@ -34,7 +34,6 @@ extension DoubleWrapping {
         self.init(floatLiteral: double)
     }
 }
-
 
 extension DoubleWrapping {
 
@@ -68,7 +67,7 @@ public func < <T: DoubleWrapping>(lhs: Double, rhs: T) -> Bool {
     return lhs < rhs.value
 }
 
-// MARK: - Arithmetic
+// MARK: - Math
 public func + <T: DoubleWrapping>(augend: T, addend: T) -> T {
     return T(floatLiteral: augend.value + addend.value)
 }

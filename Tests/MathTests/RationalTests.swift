@@ -1,13 +1,13 @@
 //
 //  RationalTests.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 1/2/17.
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
 import XCTest
-import ArithmeticTools
+import Math
 
 class RationalTests: XCTestCase {
 
@@ -85,8 +85,8 @@ class RationalTests: XCTestCase {
     func testComparableSameDenominator() {
         let a = Fraction(1,2)
         let b = Fraction(2,3)
-        XCTAssert(a < b)
-        XCTAssert(b > a)
+        XCTAssertLessThan(a,b)
+        XCTAssertGreaterThan(b,a)
     }
 
     func testComparableSameNumerator() {
@@ -157,7 +157,7 @@ class RationalTests: XCTestCase {
         XCTAssertEqual(new.denominator, 48)
     }
 
-    // MARK: - Arithmetic
+    // MARK: - Math
 
     func testReciprocal() {
         XCTAssertEqual(Fraction(1,5).reciprocal, Fraction(5,1))
@@ -255,23 +255,24 @@ class RationalTests: XCTestCase {
         XCTAssertEqual(a, Fraction(44,21))
     }
 
-    func testStrideableSameDenominator() {
-        let result = Array(stride(from: Fraction.zero, to: Fraction(4,4), by: Fraction(1,4)))
-        let expected = [Fraction(0,1), Fraction(1,4), Fraction(2,4), Fraction(3,4)]
-        XCTAssertEqual(result, expected)
-    }
-
-    func testStrideableDifferentDenominator() {
-
-        let result = Array(stride(from: Fraction(1,4), to: Fraction(9,16), by: Fraction(3,32)))
-
-        let expected = [
-            Fraction(8,32),
-            Fraction(11,32),
-            Fraction(14,32),
-            Fraction(17,32)
-        ]
-
-        XCTAssertEqual(result, expected)
-    }
+    // FIXME: Reintroduce once Strideable is recovered
+//    func testStrideableSameDenominator() {
+//        let result = Array(stride(from: Fraction.zero, to: Fraction(4,4), by: Fraction(1,4)))
+//        let expected = [Fraction(0,1), Fraction(1,4), Fraction(2,4), Fraction(3,4)]
+//        XCTAssertEqual(result, expected)
+//    }
+//
+//    func testStrideableDifferentDenominator() {
+//
+//        let result = Array(stride(from: Fraction(1,4), to: Fraction(9,16), by: Fraction(3,32)))
+//
+//        let expected = [
+//            Fraction(8,32),
+//            Fraction(11,32),
+//            Fraction(14,32),
+//            Fraction(17,32)
+//        ]
+//
+//        XCTAssertEqual(result, expected)
+//    }
 }

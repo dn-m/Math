@@ -1,13 +1,13 @@
 //
 //  IntervalRelationTests.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 2/10/17.
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
 import XCTest
-import ArithmeticTools
+import Math
 
 class IntervalRelationTests: XCTestCase {
 

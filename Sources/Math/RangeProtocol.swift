@@ -1,6 +1,6 @@
 //
 //  RangeProtocol.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 7/18/17.
 //  Copyright © 2017 James Bean. All rights reserved.

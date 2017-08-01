@@ -1,13 +1,13 @@
 //
 //  IsDividableTests.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 3/7/16.
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
 import XCTest
-@testable import ArithmeticTools
+@testable import Math
 
 class IsDivisibleTests: XCTestCase {
 

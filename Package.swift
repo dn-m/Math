@@ -9,6 +9,7 @@ let package = Package(
         .package(url: "https://github.com/dn-m/Structure", .branch("flat")),
     ],
     targets: [
-        .target(name: "Math", dependencies: ["Structure"])
+        .target(name: "Math", dependencies: ["Structure"]),
+        .testTarget(name: "MathTests", dependencies: ["Math"])
     ]
 )

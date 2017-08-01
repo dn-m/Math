@@ -1,13 +1,13 @@
 //
 //  QuadraticTests.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 1/7/17.
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
 import XCTest
-import ArithmeticTools
+import Math
 
 class QuadraticTests: XCTestCase {
 

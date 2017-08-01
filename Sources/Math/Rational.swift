@@ -1,6 +1,6 @@
 //
 //  Rational.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 1/2/17.
 //  Copyright © 2017 James Bean. All rights reserved.
@@ -12,6 +12,7 @@ import Structure
 public protocol Rational:
     Additive,
     Multiplicative,
+    Comparable,
     Hashable,
     CustomStringConvertible
     // FIXME: Reintroduce Strideable
@@ -147,7 +148,7 @@ extension Rational {
 
 extension Rational {
 
-    // MARK: - Arithmetic
+    // MARK: - Math
 
     public var reciprocal: Self {
         return Self(denominator, numerator)

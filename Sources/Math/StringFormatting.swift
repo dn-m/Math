@@ -1,6 +1,6 @@
 //
 //  StringFormatting.swift
-//  ArithmeticTools
+//  Math
 //
 //  Created by James Bean on 12/1/16.
 //  Copyright © 2016 James Bean. All rights reserved.
