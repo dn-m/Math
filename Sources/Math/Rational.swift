@@ -7,6 +7,7 @@
 //
 
 import Structure
+import Algebra
 
 /// Model of ratio.
 public protocol Rational:

@@ -6,7 +6,7 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-import Structure
+import Algebra
 
 public protocol RangeProtocol {
     associatedtype Bound: Comparable

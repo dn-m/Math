@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Structure
+import Algebra
 
 extension BidirectionalCollection where Element: SignedNumeric & Comparable {
 
