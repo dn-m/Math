@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Structure",
+        "repositoryURL": "https://github.com/dn-m/Structure",
+        "state": {
+          "branch": "flat",
+          "revision": "9ee16ee717c99419daefc49fbf93c63fcf03f0f3",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
