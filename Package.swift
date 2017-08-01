@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Math",
+    products: [.library(name: "Math", targets: ["Math"])],
     dependencies: [
         .package(url: "../Structure", .branch("flat")),
     ],
