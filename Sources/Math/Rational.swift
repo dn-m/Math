@@ -13,11 +13,10 @@ import Algebra
 public protocol Rational:
     Additive,
     Multiplicative,
-    Comparable,
+    Strideable,
+    SignedNumeric,
     Hashable,
     CustomStringConvertible
-    // FIXME: Reintroduce Strideable
-    //Strideable,
 {
     // MARK: - Instance Properties
 
@@ -87,7 +86,7 @@ extension Rational {
 
 extension Rational {
 
-    // MARK: - Signed Number
+    // MARK: - SignedNumeric
 
     /// Negate `Rational` type arithmetically.
     public static prefix func - (rational: Self) -> Self {
@@ -114,45 +113,39 @@ extension Rational {
 
     /// - returns: Representation of a `Rational` value with a given `numerator`.
     public func scaling(numerator newNumerator: Int) -> Self {
-
-        guard newNumerator != numerator else {
-            return self
-        }
-
+        guard newNumerator != numerator else { return self }
         let quotient = Double(newNumerator) / Double(numerator)
         let newDenominator = Double(denominator) * quotient
-
         assert(newDenominator.truncatingRemainder(dividingBy: 1) == 0)
-
         return Self(newNumerator, Int(newDenominator))
     }
 
     /// - returns: Representation of a `Rational` value with a given `denominator`.
     public func scaling(denominator newDenominator: Int) -> Self {
-
-        guard newDenominator != denominator else {
-            return self
-        }
-
-        guard numerator != 0 else {
-            return Self(0, newDenominator)
-        }
-
+        guard newDenominator != denominator else { return self }
+        guard numerator != 0 else { return Self(0, newDenominator) }
         let quotient = Double(newDenominator) / Double(denominator)
         let newNumerator = Double(numerator) * quotient
-
         assert(newNumerator.truncatingRemainder(dividingBy: 1) == 0)
-
         return Self(Int(newNumerator), newDenominator)
     }
 }
 
 extension Rational {
 
-    // MARK: - Math
+    // MARK: - Numeric
 
     public var reciprocal: Self {
         return Self(denominator, numerator)
+    }
+
+    public var magnitude: Self {
+        return Self(abs(denominator), abs(denominator))
+    }
+
+    /// Creates a `Rational` with the given `source`.
+    public init? <T> (exactly source: T) where T: BinaryInteger {
+        self.init(Int(source), 1)
     }
 
     /// - returns: Sum of both `Rational` values.
