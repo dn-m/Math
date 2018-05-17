@@ -17,7 +17,7 @@ class NumberFormattingTests: XCTestCase {
 
         (0..<1000).forEach { value in
             let formatted = value.formatted(digits: digits)
-            XCTAssertEqual(formatted.characters.count, digits)
+            XCTAssertEqual(formatted.count, digits)
         }
     }
 
@@ -27,7 +27,7 @@ class NumberFormattingTests: XCTestCase {
 
         stride(from: Float(0.0), to: 0.1, by: 0.001).forEach { value in
             let formatted = value.formatted(digits: digits)
-            XCTAssertEqual(formatted.characters.count, digits + 2)
+            XCTAssertEqual(formatted.count, digits + 2)
         }
     }
 
@@ -37,7 +37,7 @@ class NumberFormattingTests: XCTestCase {
 
         stride(from: Double(0.0), to: 0.1, by: 0.001).forEach { value in
             let formatted = value.formatted(digits: digits)
-            XCTAssertEqual(formatted.characters.count, digits + 2)
+            XCTAssertEqual(formatted.count, digits + 2)
         }
     }
 }

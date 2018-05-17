@@ -1,16 +1,17 @@
-// swift-tools-version:4.0
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:4.1
 
 import PackageDescription
 
 let package = Package(
     name: "Math",
-    products: [.library(name: "Math", targets: ["Math"])],
+    products: [
+        .library(name: "Math", targets: ["Math"])
+    ],
     dependencies: [
-        .package(url: "https://github.com/dn-m/Structure", .branch("master")),
+        .package(url: "https://github.com/dn-m/Structure.git", .branch("interval-relation")),
     ],
     targets: [
-        .target(name: "Math", dependencies: ["Structure"]),
-        .testTarget(name: "MathTests", dependencies: ["Math"])
+        .target(name: "Math", dependencies: ["Algebra", "Restructure"]),
+        .testTarget(name: "MathTests", dependencies: ["Math", "DataStructures"])
     ]
 )

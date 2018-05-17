@@ -2,11 +2,20 @@
   "object": {
     "pins": [
       {
-        "package": "Structure",
-        "repositoryURL": "https://github.com/dn-m/Structure",
+        "package": "PerformanceTesting",
+        "repositoryURL": "https://github.com/dn-m/PerformanceTesting.git",
         "state": {
           "branch": "master",
-          "revision": "7ff248ef8d5f622852b686a01a9473c1e46ff5e2",
+          "revision": "fc96795471fce16de0277ec0dbd0f69f5dd013d6",
+          "version": null
+        }
+      },
+      {
+        "package": "Structure",
+        "repositoryURL": "https://github.com/dn-m/Structure.git",
+        "state": {
+          "branch": "interval-relation",
+          "revision": "8aed6faf5f67dc74db4d9400056d1854f6eb9b08",
           "version": null
         }
       }
