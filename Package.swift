@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "Math", targets: ["Math"])
     ],
     dependencies: [
-        .package(url: "https://github.com/dn-m/Structure.git", .branch("interval-relation")),
+        .package(url: "https://github.com/dn-m/Structure.git", .branch("swift-4.2")),
     ],
     targets: [
         .target(name: "Math", dependencies: ["Algebra", "Restructure"]),

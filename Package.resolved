@@ -14,8 +14,8 @@
         "package": "Structure",
         "repositoryURL": "https://github.com/dn-m/Structure.git",
         "state": {
-          "branch": "interval-relation",
-          "revision": "8aed6faf5f67dc74db4d9400056d1854f6eb9b08",
+          "branch": "swift-4.2",
+          "revision": "38738dca34843673308fd90adaf28e4636a11fc6",
           "version": null
         }
       }
