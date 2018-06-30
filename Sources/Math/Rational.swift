@@ -7,7 +7,7 @@
 //
 
 import Algebra
-import Restructure
+import DataStructures
 
 /// Model of ratio.
 public protocol Rational:

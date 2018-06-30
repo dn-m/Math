@@ -11,7 +11,7 @@ let package = Package(
         .package(url: "https://github.com/dn-m/Structure.git", .branch("swift-4.2")),
     ],
     targets: [
-        .target(name: "Math", dependencies: ["Algebra", "Restructure"]),
+        .target(name: "Math", dependencies: ["Algebra", "DataStructures"]),
         .testTarget(name: "MathTests", dependencies: ["Math", "DataStructures"])
     ]
 )
