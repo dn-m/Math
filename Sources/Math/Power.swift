@@ -52,7 +52,8 @@ public func closestPowerOfTwo(coefficient: Int, under target: Int) -> Int? {
 }
 
 private func closer(to sequence: PowerSequence<Int>, target: Int) -> Int? {
-    let sequence = Array(sequence)
-    guard let lastPair = sequence.last(amount: 2).map(Array.init) else { return nil }
+    let powers = Array(sequence)
+    guard !powers.isEmpty else { return target }
+    guard let lastPair = powers.last(amount: 2).map(Array.init) else { return powers.first! }
     return closer(to: target, a: lastPair[0], b: lastPair[1])
 }

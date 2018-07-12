@@ -36,6 +36,11 @@ class PowerTests: XCTestCase {
         XCTAssertEqual(closest, 11)
     }
 
+    func testClosestPowerOf3_coeff17() {
+        let closest = closestPowerOfTwo(coefficient: 17, to: 6)!
+        XCTAssertEqual(closest, 17)
+    }
+
     func testInBetween() {
         let closest = closestPowerOfTwo(to: 12)!
         XCTAssertEqual(closest, 8)
