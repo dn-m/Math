@@ -6,8 +6,8 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-import Structure
 import Algebra
+import Algorithms
 
 /// Model of ratio.
 public protocol Rational:

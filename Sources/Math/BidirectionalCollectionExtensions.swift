@@ -35,7 +35,7 @@ extension BidirectionalCollection where Element: SignedNumeric & Comparable {
     }
 }
 
-extension BidirectionalCollection where Element: FloatingPoint & Additive, IndexDistance == Int {
+extension BidirectionalCollection where Element: FloatingPoint & Additive {
 
     /// - Returns: Average of all values contained herein, if there are more than 0 elements.
     /// Otherwise, `nil`.
