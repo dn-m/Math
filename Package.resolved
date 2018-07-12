@@ -3,20 +3,20 @@
     "pins": [
       {
         "package": "PerformanceTesting",
-        "repositoryURL": "https://github.com/dn-m/PerformanceTesting.git",
+        "repositoryURL": "https://github.com/dn-m/PerformanceTesting",
         "state": {
-          "branch": "master",
+          "branch": null,
           "revision": "fc96795471fce16de0277ec0dbd0f69f5dd013d6",
-          "version": null
+          "version": "0.1.0"
         }
       },
       {
         "package": "Structure",
-        "repositoryURL": "https://github.com/dn-m/Structure.git",
+        "repositoryURL": "https://github.com/dn-m/Structure",
         "state": {
-          "branch": "swift-4.2",
-          "revision": "b986f9fcfb99179dc377a5bd43a46a1f346ba6bc",
-          "version": null
+          "branch": null,
+          "revision": "95a3c7e50118006ae7d415dbe24d724936c3ad07",
+          "version": "0.3.1"
         }
       }
     ]

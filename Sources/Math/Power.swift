@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
+import DataStructures
 
 /**
  >`closestPowerOfTwo(to: 13) -> 16`
@@ -52,18 +52,12 @@ public func closestPowerOfTwo(coefficient: Int, under target: Int) -> Int? {
 }
 
 private func closer(to sequence: PowerSequence<Int>, target: Int) -> Int? {
-
     let sequence = Array(sequence)
-
-    guard !sequence.isEmpty else {
-        return nil
-    }
-
-    let lastPair = sequence.last(amount: 2)
-
-    guard !lastPair.isEmpty else {
-        return sequence[0]
-    }
-
-    return closer(to: target, a: lastPair[0], b: lastPair[1])
+    guard let lastPair = sequence.last(amount: 2) else { return nil }
+    guard !lastPair.isEmpty else { return sequence[0] }
+    return closer(
+        to: target,
+        a: lastPair[lastPair.startIndex],
+        b: lastPair[lastPair.index(after: lastPair.startIndex)]
+    )
 }
