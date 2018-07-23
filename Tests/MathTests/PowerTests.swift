@@ -45,4 +45,8 @@ class PowerTests: XCTestCase {
         let closest = closestPowerOfTwo(to: 12)!
         XCTAssertEqual(closest, 8)
     }
+
+    func testPowerSequenceMap() {
+        let powerSequence = PowerSequence.init(coefficient: 2, max: 128)
+    }
 }

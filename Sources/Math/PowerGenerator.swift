@@ -16,12 +16,12 @@ public class PowerGenerator <T: BinaryInteger>: IteratorProtocol {
 
     // MARK: - Instance Properties
 
-    let doOvershoot: Bool
-    var hasOvershot: Bool = false
+    private var hasOvershot: Bool = false
+    private var power: T
 
-    var power: T
-    var coefficient: T
-    var max: T?
+    let doOvershoot: Bool
+    let coefficient: T
+    let max: T?
 
     // MARK: - Initializers
 
