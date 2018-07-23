@@ -6,27 +6,6 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-fileprivate func < <T: Comparable> (lhs: T?, rhs: T?) -> Bool {
-    switch (lhs, rhs) {
-    case let (l?, r?):
-        return l < r
-    case (nil, _?):
-        return true
-    default:
-        return false
-    }
-}
-
-fileprivate func > <T: Comparable> (lhs: T?, rhs: T?) -> Bool {
-    switch (lhs, rhs) {
-    case let (l?, r?):
-        return l > r
-    default:
-        return rhs < lhs
-    }
-}
-
-
 /// Power-of-two Generator
 internal class PowerGenerator<T: BinaryInteger>: IteratorProtocol {
 
@@ -75,5 +54,25 @@ internal class PowerGenerator<T: BinaryInteger>: IteratorProtocol {
         power = power * 2
         if let max = max { return result <= max ? result : nil }
         return result
+    }
+}
+
+func < <T: Comparable> (lhs: T?, rhs: T?) -> Bool {
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
+}
+
+func > <T: Comparable> (lhs: T?, rhs: T?) -> Bool {
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l > r
+    default:
+        return rhs < lhs
     }
 }
