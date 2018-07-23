@@ -7,32 +7,33 @@
 //
 
 /// Power-of-two Generator
-internal class PowerGenerator<T: BinaryInteger>: IteratorProtocol {
+public class PowerGenerator <T: BinaryInteger>: IteratorProtocol {
 
     // MARK: - Associated Types
 
     /// This GeneratorType generates ArithmeticType values
-    internal typealias Element = T
+    public typealias Element = T
 
-    fileprivate let doOvershoot: Bool
-    fileprivate var hasOvershot: Bool = false
+    // MARK: - Instance Properties
 
-    fileprivate var power: T
-    fileprivate var coefficient: T
-    fileprivate var max: T?
+    let doOvershoot: Bool
+    var hasOvershot: Bool = false
+
+    var power: T
+    var coefficient: T
+    var max: T?
 
     // MARK: - Initializers
 
-    /**
-     Create a PowerGenerator.
-
-     - parameter coefficient: Coefficient that multiplies base of exponential expression
-     - parameter max:         Maximum value of generated powers-of-two
-     - parameter doOvershoot: If generator includes the next power-of-two greater than max
-
-     - returns: Initialized PowerGenerator
-     */
-    internal init(coefficient: T, max: T? = nil, doOvershoot: Bool = false) {
+    /// Create a PowerGenerator.
+    ///
+    /// - Parameter coefficient: Coefficient that multiplies base of exponential expression
+    /// - Parameter max:         Maximum value of generated powers-of-two
+    /// - Parameter doOvershoot: If generator includes the next power-of-two greater than max
+    ///
+    /// - Returns: Initialized PowerGenerator
+    ///
+    public init(coefficient: T, max: T? = nil, doOvershoot: Bool = false) {
         self.power = coefficient
         self.coefficient = coefficient
         self.max = max
@@ -42,7 +43,7 @@ internal class PowerGenerator<T: BinaryInteger>: IteratorProtocol {
     // MARK: - Instance Methods
 
     /// Advance to the next element and return it, or nil if no next element exists.
-    internal func next() -> Element? {
+    public func next() -> Element? {
         if doOvershoot {
             if hasOvershot { return nil }
             if power > max {
