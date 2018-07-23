@@ -47,6 +47,7 @@ class PowerTests: XCTestCase {
     }
 
     func testPowerSequenceMap() {
-        let powerSequence = PowerSequence.init(coefficient: 2, max: 128)
+        let powerSequence = PowerSequence(coefficient: 2)
+        powerSequence.map { print($0) }
     }
 }

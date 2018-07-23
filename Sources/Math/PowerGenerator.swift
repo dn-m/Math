@@ -7,7 +7,7 @@
 //
 
 /// Power-of-two Generator
-public class PowerGenerator <T: BinaryInteger>: IteratorProtocol {
+public class PowerGenerator <T: FixedWidthInteger>: IteratorProtocol {
 
     // MARK: - Associated Types
 
@@ -21,7 +21,7 @@ public class PowerGenerator <T: BinaryInteger>: IteratorProtocol {
 
     let doOvershoot: Bool
     let coefficient: T
-    let max: T?
+    let max: T
 
     // MARK: - Initializers
 
@@ -33,7 +33,7 @@ public class PowerGenerator <T: BinaryInteger>: IteratorProtocol {
     ///
     /// - Returns: Initialized PowerGenerator
     ///
-    public init(coefficient: T, max: T? = nil, doOvershoot: Bool = false) {
+    public init(coefficient: T, max: T = T.max, doOvershoot: Bool = false) {
         self.power = coefficient
         self.coefficient = coefficient
         self.max = max
@@ -53,8 +53,7 @@ public class PowerGenerator <T: BinaryInteger>: IteratorProtocol {
         }
         let result = power
         power = power * 2
-        if let max = max { return result <= max ? result : nil }
-        return result
+        return result <= max ? result : nil
     }
 }
 

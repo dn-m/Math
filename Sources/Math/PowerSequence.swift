@@ -7,7 +7,7 @@
 //
 
 /// Power-of-two Sequence.
-public class PowerSequence<T: BinaryInteger>: Sequence {
+public class PowerSequence<T: FixedWidthInteger>: Sequence {
 
     // MARK: - Associated Types
 
@@ -18,7 +18,7 @@ public class PowerSequence<T: BinaryInteger>: Sequence {
 
     let doOvershoot: Bool
     let coefficient: T
-    let max: T?
+    let max: T
 
     // MARK: - Initializers
 
@@ -29,7 +29,7 @@ public class PowerSequence<T: BinaryInteger>: Sequence {
     /// - Parameter doOvershoot: If sequence includes the next power-of-two greater than max
     ///
     /// - Returns: Initialized PowerSequence
-    public init(coefficient: T, max: T? = nil, doOvershoot: Bool = false) {
+    public init(coefficient: T, max: T = T.max, doOvershoot: Bool = false) {
         self.coefficient = coefficient
         self.max = max
         self.doOvershoot = doOvershoot
