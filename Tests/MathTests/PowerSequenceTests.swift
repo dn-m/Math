@@ -32,4 +32,20 @@ class PowerSequenceTests: XCTestCase {
         let powerSequence = PowerSequence(coefficient: 2, max: 13, doOvershoot: true).map { $0 }
         XCTAssertEqual(powerSequence, [2,4,8,16])
     }
+
+    func testPowerSequenceContains() {
+        let seq = PowerSequence<Int>()
+        XCTAssertFalse(seq.contains(31))
+        XCTAssert(seq.contains(16))
+    }
+
+    func testPowerSequenceMapContains() {
+        let seq = PowerSequence<Int>().map { $0 - 1 }
+        XCTAssert(seq.contains(3))
+        XCTAssert(seq.contains(7))
+        XCTAssert(seq.contains(15))
+        XCTAssert(seq.contains(31))
+        XCTAssert(seq.contains(63))
+        XCTAssert(seq.contains(127))
+    }
 }
