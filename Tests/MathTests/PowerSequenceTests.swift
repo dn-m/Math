@@ -41,6 +41,7 @@ class PowerSequenceTests: XCTestCase {
 
     func testPowerSequenceMapContains() {
         let seq = PowerSequence<Int>().map { $0 - 1 }
+        XCTAssert(seq.contains(1))
         XCTAssert(seq.contains(3))
         XCTAssert(seq.contains(7))
         XCTAssert(seq.contains(15))
