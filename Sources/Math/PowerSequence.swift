@@ -29,14 +29,13 @@ public class PowerSequence<T: FixedWidthInteger>: Sequence {
     /// - Parameter doOvershoot: If sequence includes the next power-of-two greater than max
     ///
     /// - Returns: Initialized PowerSequence
-    public init(coefficient: T, max: T = T.max, doOvershoot: Bool = false) {
+    public init(coefficient: T = 2, max: T = T.max, doOvershoot: Bool = false) {
         self.coefficient = coefficient
         self.max = max
         self.doOvershoot = doOvershoot
     }
 
     // MARK: - Instance Methods
-
 
     /// Generate sequence of powers-of-two.
     ///

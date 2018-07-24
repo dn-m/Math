@@ -52,7 +52,9 @@ public class PowerGenerator <T: FixedWidthInteger>: IteratorProtocol {
             }
         }
         let result = power
-        power = power * 2
+        let (maybeOverflowingPower, didOverflow) = power.multipliedReportingOverflow(by: 2)
+        guard !didOverflow else { return nil }
+        self.power = maybeOverflowingPower
         return result <= max ? result : nil
     }
 }
