@@ -11,7 +11,7 @@ let package = Package(
         .package(url: "https://github.com/dn-m/Structure", from: "0.3.1"),
     ],
     targets: [
-        .target(name: "Math", dependencies: ["Algebra", "DataStructures"]),
+        .target(name: "Math", dependencies: ["Destructure", "Algebra", "DataStructures"]),
         .testTarget(name: "MathTests", dependencies: ["Math", "DataStructures"])
     ]
 )

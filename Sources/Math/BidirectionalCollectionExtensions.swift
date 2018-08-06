@@ -6,9 +6,10 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
+import Destructure
 import Algebra
 
-extension BidirectionalCollection where Element: SignedNumeric & Comparable {
+extension Sequence where Element: SignedNumeric & Comparable {
 
     /// Get the closest value in Array to target value.
     ///
@@ -16,22 +17,7 @@ extension BidirectionalCollection where Element: SignedNumeric & Comparable {
     ///
     /// - Returns: Value closest to target is !self.isEmpty. Otherwise nil.
     public func closest(to target: Element) -> Element? {
-
-        guard !self.isEmpty else {
-            return nil
-        }
-
-        var cur = self.first!
-        var diff = abs(target - cur)
-        for el in self {
-            let newDiff = abs(target - el)
-            if newDiff < diff {
-                diff = newDiff
-                cur = el
-            }
-        }
-
-        return cur
+        return lazy.map { ($0, abs(target - $0)) }.min { $0.1 < $1.1 }.map { $0.0 }
     }
 }
 
