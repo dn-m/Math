@@ -6,8 +6,6 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-import Darwin
-
 /// - returns: Greatest common divisor of `a` and `b`.
 public func gcd <I: BinaryInteger> (_ a: I, _ b: I) -> I {
     let result = a % b
