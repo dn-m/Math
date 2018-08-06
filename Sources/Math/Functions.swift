@@ -8,22 +8,6 @@
 
 import Darwin
 
-///**
-// Get the closer of two values to a target value.
-//
-// >`closer(to: 11, a: 12, b: 3) -> 12`
-//
-// - note: If the distances between both values and the target value are equivalent, the first
-// value (a) is returned.
-//
-// >`closer(to: 6, a: 4, b: 8) -> 4`
-//
-// - returns: Value closer to target value
-// */
-//public func closer <T: SignedNumeric & Comparable> (to target: T, a: T, b: T) -> T {
-//    return abs(a - target) <= abs(b - target) ? a : b
-//}
-
 /**
  - note: If both values are equal, they are returned in the order in which they were given
 
