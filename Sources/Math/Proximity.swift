@@ -25,7 +25,7 @@ extension Sequence where Element: SignedNumeric & Comparable {
     ///
     /// - Parameter target: Value to check for closest component
     ///
-    /// - Returns: Value closest to target is `!self.isEmpty`. Otherwise nil.
+    /// - Returns: Value closest to target if `!self.isEmpty`. Otherwise nil.
     public func closest(to target: Element) -> Element? {
         return self.min { abs(target - $0) < abs(target - $1) }
     }
