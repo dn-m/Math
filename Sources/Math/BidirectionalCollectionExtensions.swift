@@ -8,8 +8,6 @@
 
 import Algebra
 
-
-
 extension BidirectionalCollection where Element: FloatingPoint & Additive {
 
     /// - Returns: Average of all values contained herein, if there are more than 0 elements.
