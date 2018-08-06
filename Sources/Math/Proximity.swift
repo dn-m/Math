@@ -25,8 +25,8 @@ extension Sequence where Element: SignedNumeric & Comparable {
     ///
     /// - Parameter target: Value to check for closest component
     ///
-    /// - Returns: Value closest to target is !self.isEmpty. Otherwise nil.
+    /// - Returns: Value closest to target is `!self.isEmpty`. Otherwise nil.
     public func closest(to target: Element) -> Element? {
-        return lazy.map { ($0, abs(target - $0)) }.min { $0.1 < $1.1 }.map { $0.0 }
+        return self.min { abs(target - $0) < abs(target - $1) }
     }
 }
