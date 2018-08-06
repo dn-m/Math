@@ -8,17 +8,7 @@
 
 import Algebra
 
-extension Sequence where Element: SignedNumeric & Comparable {
 
-    /// Get the closest value in Array to target value.
-    ///
-    /// - Parameter target: Value to check for closest component
-    ///
-    /// - Returns: Value closest to target is !self.isEmpty. Otherwise nil.
-    public func closest(to target: Element) -> Element? {
-        return lazy.map { ($0, abs(target - $0)) }.min { $0.1 < $1.1 }.map { $0.0 }
-    }
-}
 
 extension BidirectionalCollection where Element: FloatingPoint & Additive {
 
