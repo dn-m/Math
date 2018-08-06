@@ -1,1 +1,24 @@
 theme: fullwidth
+custom_categories:
+  - name: Rational
+    - children: Rational
+  - name: Power
+    - children: 
+      - "PowerGenerator"
+      - "PowerSequence"
+      - "closestPowerOfTwo(to:)"
+      - "closestPowerOfTwo(under:)"
+      - "closestPowerOfTwo(coefficient:to:)"
+      - "closestPowerOfTwo(coefficient:under:)"
+  - name: Factors
+    - children:
+      - "isEven"
+      - "isOdd"
+      - "isPrime"
+      - "isDivisible(by:)"
+      - "isPowerOfTwo"
+      - "gcd(_:_:)"
+      - "lcm(_:_:)"
+      - "mod(_:_:)"
+
+  
