@@ -34,18 +34,18 @@ public func ordered <T: Comparable> (_ a: T, _ b: T) -> (T, T) {
     return a <= b ? (a,b) : (b,a)
 }
 
-/// - returns: The average to the two given values.
+/// - Returns: The average to the two given values.
 public func mean <F: FloatingPoint> (_ a: F, _ b: F) -> F {
     return (a + b) / 2
 }
 
-/// - returns: "True" modulo (not "remainder", which is implemented by Swift's `%`).
+/// - Returns: Divisor modulo (as opposed to the dividend implemented by Swift's `%` operator).
 public func mod <T: BinaryInteger> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend % modulus
     return result < 0 ? result + modulus : result
 }
 
-/// - returns: "True" modulo (not "remainder", which is implemented by Swift's `%`).
+/// - Returns: Divisor modulo (as opposed to the dividend implemented by Swift's `%` operator).
 public func mod <T: FloatingPoint> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend.truncatingRemainder(dividingBy: modulus)
     return result < 0 ? result + modulus : result
