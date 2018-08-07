@@ -1,7 +1,8 @@
 theme: fullwidth
 custom_categories:
   - name: "Rational"
-    children: "Rational"
+    children: 
+      - "Rational"
 
   # - name: Power
   #   - children: 
