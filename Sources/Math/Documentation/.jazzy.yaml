@@ -3,8 +3,9 @@ custom_categories:
   - name: "Rational"
     children: 
       - "Rational"
+      - "Fraction"
   - name: "Power"
-    - children: 
+    children: 
       - "PowerGenerator"
       - "PowerSequence"
       - "closestPowerOfTwo(to:)"
@@ -12,7 +13,7 @@ custom_categories:
       - "closestPowerOfTwo(coefficient:to:)"
       - "closestPowerOfTwo(coefficient:under:)"
   - name: "Factors"
-    - children:
+    children:
       - "isEven"
       - "isOdd"
       - "isPrime"
@@ -21,3 +22,21 @@ custom_categories:
       - "gcd(_:_:)"
       - "lcm(_:_:)"
       - "mod(_:_:)"
+  - name: "Bitwise"
+    children:
+        - "countTrailingZeros(_:)"
+        - "countLeadingZeros(_:)"
+        - ">>>(_:_:)"
+        - ">>>=(_:_:)"
+  - name: "Linear Regression"
+    children:
+        - "quadratic(_:_:_:)"
+        - "slope(_:)"
+        - "slope(_:_:)"
+  - name: "String Formatting"
+    children:
+        - "formatted(digits:)"
+  - name: "Scaling"
+    children:
+        - "scale(from:to:)"
+        - "scaled(from:to:)"
