@@ -28,7 +28,8 @@ public func * <S,T> (lhs: S, rhs: T) -> [S.Element]
 }
 
 /// - returns: Slope of linear regression of given x-values and y-values.
-public func slope <C> (_ xs: C, _ ys: C) -> C.Element where C: Collection, C.Element == Float {
+public func slope <C,D> (_ xs: C, _ ys: D) -> C.Element
+    where C: Collection, D: Collection, C.Element == Float, D.Element == Float {
     let sum1 = (xs * ys).mean! - (xs.mean! * ys.mean!)
     let sum2 = xs.squared.mean! - pow(xs.mean!, 2)
     return sum1 / sum2
