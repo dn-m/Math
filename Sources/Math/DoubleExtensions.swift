@@ -12,6 +12,11 @@ extension Double {
 
     /// Exponentially scales a `Double` from the given `source` to the given
     /// `destination`.
+    ///
+    #warning("""
+    Abstract Double.scale(from:to:) over `FloatingPoint`. This requires writing a `pow(_:)` which
+    is generic over `FloatingPoint` values.
+    """)
     public mutating func scale(
         from source: ClosedRange<Double>,
         toExponential destination: ClosedRange<Double>
@@ -25,6 +30,11 @@ extension Double {
 
     /// - returns: A `Double` value scaled from the given `source` range to the
     /// given `destination` range.
+    ///
+    #warning("""
+    Abstract Double.scaled(from:to:) over `FloatingPoint`. This requires writing a `pow(_:)` which
+    is generic over `FloatingPoint` values.
+    """)
     public func scaled(
         from source: ClosedRange<Double>,
         toExponential destination: ClosedRange<Double>
