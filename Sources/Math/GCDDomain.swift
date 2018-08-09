@@ -6,13 +6,13 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-/// - returns: Greatest common divisor of `a` and `b`.
+/// - Returns: Greatest common divisor of `a` and `b`.
 public func gcd <I: BinaryInteger> (_ a: I, _ b: I) -> I {
     let result = a % b
     return result == 0 ? b : gcd(b, result)
 }
 
-/// - returns: Least common multiple of `a` and `b`.
+/// - Returns: Least common multiple of `a` and `b`.
 public func lcm <I: BinaryInteger> (_ a: I, _ b: I) -> I {
     return (a / gcd(a,b)) * b
 }

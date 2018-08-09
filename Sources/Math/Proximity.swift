@@ -5,14 +5,15 @@
 //  Created by James Bean on 8/6/18.
 //
 
-/// Get the closer of two values to a target value.
+/// - Parameter target: Target value
+/// - Parameter a: First value to check proximity to target value
+/// - Parameter b: First value to check proximity to target value
 ///
-/// >`closer(to: 11, a: 12, b: 3) -> 12`
+///     let _ = closer(to: 11, a: 12, b: 3) // => 12
+///     let _ = closer(to: 6, a: 4, b: 8) // => 4
 ///
-/// - note: If the distances between both values and the target value are equivalent, the first
+/// - Note: If the distances between both values and the target value are equivalent, the first
 /// value (a) is returned.
-///
-/// >`closer(to: 6, a: 4, b: 8) -> 4`
 ///
 /// - Returns: Value closer to target value
 public func closer <T> (to target: T, a: T, b: T) -> T where T: SignedNumeric & Comparable {
@@ -21,8 +22,6 @@ public func closer <T> (to target: T, a: T, b: T) -> T where T: SignedNumeric & 
 
 extension Sequence where Element: SignedNumeric & Comparable {
 
-    /// Get the closest value in Array to target value.
-    ///
     /// - Parameter target: Value to check for closest component
     ///
     /// - Returns: Value closest to target if `!self.isEmpty`. Otherwise nil.
