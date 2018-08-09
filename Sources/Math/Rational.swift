@@ -139,6 +139,7 @@ extension Rational {
         return Self(denominator, numerator)
     }
 
+    /// - Returns: The magnitude (`abs`) of this value.
     public var magnitude: Self {
         return Self(abs(denominator), abs(denominator))
     }
@@ -148,7 +149,7 @@ extension Rational {
         self.init(Int(source), 1)
     }
 
-    /// - returns: Sum of both `Rational` values.
+    /// - Returns: Sum of both `Rational` values.
     public static func + (lhs: Self, rhs: Self) -> Self {
         let (a,b) = normalized(lhs, rhs)
         return Self(a.numerator + b.numerator, a.denominator)
@@ -159,7 +160,7 @@ extension Rational {
         lhs = lhs + rhs
     }
 
-    /// - returns: Difference of both `Rational` values.
+    /// - Returns: Difference of both `Rational` values.
     public static func - (lhs: Self, rhs: Self) -> Self {
         let (a,b) = normalized(lhs, rhs)
         return Self(a.numerator - b.numerator, a.denominator)
@@ -170,7 +171,7 @@ extension Rational {
         lhs = lhs - rhs
     }
 
-    /// - returns: Product of both `Rational` values.
+    /// - Returns: Product of both `Rational` values.
     public static func * (lhs: Self, rhs: Self) -> Self {
         return Self(lhs.numerator * rhs.numerator, lhs.denominator * rhs.denominator)
     }
@@ -180,7 +181,7 @@ extension Rational {
         lhs = lhs * rhs
     }
 
-    /// - returns: Quotient of both `Rational` values.
+    /// - Returns: Quotient of both `Rational` values.
     public static func / (lhs: Self, rhs: Self) -> Self {
         return lhs * rhs.reciprocal
     }
