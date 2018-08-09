@@ -23,7 +23,7 @@ extension Sequence where Element: BinaryInteger {
     ///
     ///     let gcd = [8,12].gcd // => 4
     ///
-    public var gcd: Iterator.Element {
+    public var gcd: Element {
         return reduce(0, Math.gcd)
     }
 
@@ -31,7 +31,7 @@ extension Sequence where Element: BinaryInteger {
     ///
     ///     let lcm = [4,5,6].lcm // => 60
     ///
-    public var lcm: Iterator.Element {
+    public var lcm: Element {
         return reduce(1, Math.lcm)
     }
 }
