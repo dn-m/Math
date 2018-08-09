@@ -8,23 +8,16 @@
 
 import Darwin
 
-/// - returns: All given values risen to the power of two.
-public func squared <F: FloatingPoint> (_ values: [F]) -> [F] {
+/// - Returns: All given values risen to the power of two.
+public func squared <N: Numeric> (_ values: [N]) -> [N] {
     return values.map { $0 * $0 }
 }
 
-/// - returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
-public func * <F: FloatingPoint> (lhs: [F], rhs: [F]) -> [F] {
-    return zip(lhs,rhs).map(*)
-}
-
-/// - returns: All given values risen to the power of two.
-public func squared <I: BinaryInteger> (_ values: [I]) -> [I] {
-    return values.map { $0 * $0 }
-}
-
-/// - returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
-public func * <I: BinaryInteger> (lhs: [I], rhs: [I]) -> [I] {
+/// - Returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
+///
+/// - Note: As with `zip`, this operation is finished as soon as the end of the shorter sequence is
+/// reached.
+public func * <S> (lhs: S, rhs: S) -> [S.Element] where S: Sequence, S.Element: Numeric {
     return zip(lhs,rhs).map(*)
 }
 
