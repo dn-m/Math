@@ -20,20 +20,11 @@ public protocol Rational:
 {
     // MARK: - Instance Properties
 
-    /// Float value.
+    /// - Returns: The result of dividing the numerator by the denominator.
     var floatValue: Float { get }
 
-    /// Double value.
+    /// - Returns: The result of dividing the numerator by the denominator.
     var doubleValue: Double { get }
-
-    /// Inverse of self. Assumes `numerator != 0`.
-    var inverse: Self { get }
-
-    /// Reduced form of `self`.
-    var reduced: Self { get }
-
-    // Whether or not `self` is in its most-reduced form.
-    var isReduced: Bool { get }
 
     /// Numerator.
     var numerator: Int { get }
@@ -45,6 +36,8 @@ public protocol Rational:
 
     /// Create a `Rational` value with a given `numerator` and `denominator`.
     init(_ numerator: Int, _ denominator: Int)
+
+    // MARK: - Instance Methods
 
     /// - returns: Representation of a `Rational` value with a given `numerator`, if possible.
     ///
@@ -70,6 +63,8 @@ extension Rational {
 
     // MARK: - Additive
 
+    /// The `zero` value of the `Rational` type, which when added to another `Rational` value
+    /// results in a value which is equivalent to the other `Rational` value.
     public static var zero: Self {
         return Self(0,1)
     }
@@ -79,6 +74,8 @@ extension Rational {
 
     // MARK: - Multiplicative
 
+    /// The `one` value of the `Rational` type, which when multiplied by another `Rational` value
+    /// results in a value which is equivalent to the other `Rational` value.
     public static var one: Self {
         return Self(1,1)
     }
@@ -98,12 +95,12 @@ extension Rational {
 
     // MARK: - Strideable
 
-    /// - returns: Self advanced by the given `n`.
+    /// - Returns: Self advanced by the given `n`.
     public func advanced(by n: Self) -> Self {
         return self + n
     }
 
-    /// - returns: Distance to the given `other`.
+    /// - Returns: Distance to the given `other`.
     public func distance(to other: Self) -> Self {
         return other - self
     }
@@ -111,7 +108,7 @@ extension Rational {
 
 extension Rational {
 
-    /// - returns: Representation of a `Rational` value with a given `numerator`.
+    /// - Returns: Representation of a `Rational` value with a given `numerator`.
     public func scaling(numerator newNumerator: Int) -> Self {
         guard newNumerator != numerator else { return self }
         let quotient = Double(newNumerator) / Double(numerator)
@@ -120,7 +117,7 @@ extension Rational {
         return Self(newNumerator, Int(newDenominator))
     }
 
-    /// - returns: Representation of a `Rational` value with a given `denominator`.
+    /// - Returns: Representation of a `Rational` value with a given `denominator`.
     public func scaling(denominator newDenominator: Int) -> Self {
         guard newDenominator != denominator else { return self }
         guard numerator != 0 else { return Self(0, newDenominator) }
@@ -135,6 +132,9 @@ extension Rational {
 
     // MARK: - Numeric
 
+    /// - Returns: A value in which the `numerator` and `denominator` values are inverted.
+    ///
+    /// - Invariant: `numerator != 0`.
     public var reciprocal: Self {
         return Self(denominator, numerator)
     }
