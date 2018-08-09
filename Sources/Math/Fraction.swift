@@ -8,7 +8,7 @@
 
 /// A representation of a `Fraction`.
 ///
-/// *(Example Usage*(
+/// **Example Usage**
 ///
 /// Create a fraction.
 ///
