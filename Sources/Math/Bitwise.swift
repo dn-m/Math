@@ -35,13 +35,13 @@ public func countLeadingZeros(_ n: Int) -> Int {
 infix operator >>> : BitwiseShiftPrecedence
 
 /// Logical right shift.
-public func >>> (lhs: Int, rhs: Int) -> Int {
+func >>> (lhs: Int, rhs: Int) -> Int {
     return Int(bitPattern: UInt(bitPattern: lhs) >> UInt(rhs))
 }
 
 infix operator >>>= : BitwiseShiftPrecedence
 
 /// Logical right shift assignment.
-public func >>>= (lhs: inout Int, rhs: Int) {
+func >>>= (lhs: inout Int, rhs: Int) {
     lhs = lhs >>> rhs
 }

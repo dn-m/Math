@@ -30,5 +30,4 @@ class QuadraticTests: XCTestCase {
         let result: Set<Double> = quadratic(5,6,1)
         XCTAssertEqual(result, [-1, -0.2])
     }
-
 }

@@ -7,54 +7,50 @@
 //
 
 import Darwin
+import Algebra
 
-/// - returns: All given values risen to the power of two.
-public func squared <F: FloatingPoint> (_ values: [F]) -> [F] {
-    return values.map { $0 * $0 }
-}
-
-/// - returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
-public func * <F: FloatingPoint> (lhs: [F], rhs: [F]) -> [F] {
+/// - Returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
+///
+/// - Note: As with `zip`, this operation is finished as soon as the end of the shorter sequence is
+/// reached.
+public func * <S,T> (lhs: S, rhs: T) -> [S.Element]
+    where S: Sequence, T: Sequence, S.Element: Numeric, S.Element == T.Element
+{
     return zip(lhs,rhs).map(*)
 }
 
-/// - returns: All given values risen to the power of two.
-public func squared <I: BinaryInteger> (_ values: [I]) -> [I] {
-    return values.map { $0 * $0 }
+/// - Returns: A function that will calculate the y-value for the given x-value on the regression.
+public func linearRegression <F> (_ dataSet: [F: F]) -> (F) -> F where F: FloatingPoint & Additive {
+    precondition(!dataSet.isEmpty)
+    return linearRegression(dataSet.keys, dataSet.values)
 }
 
-/// - returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
-public func * <I: BinaryInteger> (lhs: [I], rhs: [I]) -> [I] {
-    return zip(lhs,rhs).map(*)
-}
-
-/// - returns: Slope of linear regression of given x-values and y-values.
-public func slope (_ xs: [Float], _ ys: [Float]) -> Float {
-    let sum1 = (xs * ys).mean! - (xs.mean! * ys.mean!)
-    let sum2 = squared(xs).mean! - pow(xs.mean!, 2)
-    return sum1 / sum2
-}
-
-/// - returns: Function that will calculate the y-value for the given x-value on the
+/// - Returns: Function that will calculate the y-value for the given x-value on the
 ///     regression.
 ///
-/// - note: Modified from: [Ray Wenderlich Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Linear%20Regression)
-public func linearRegression (_ xs: [Float], _ ys: [Float]) -> (Float) -> (Float) {
-
-    guard !(xs.isEmpty || ys.isEmpty) else { return { _ in 0 } }
-
+/// - Note: Modified from: [Ray Wenderlich Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Linear%20Regression)
+func linearRegression <F,C,D> (_ xs: C, _ ys: D) -> (F) -> (F)
+    where F: FloatingPoint & Additive, C: Collection, D: Collection, C.Element == F, D.Element == F
+{
+    assert(!xs.isEmpty && !ys.isEmpty)
     let m = slope(xs,ys)
-    let intercept = ys.mean! - (m * xs.mean!)
-
-    return { x in m * x + intercept }
+    let b = ys.mean! - (m * xs.mean!)
+    return { x in m * x + b }
 }
 
-/// - returns: Slope of the linear regression.
-public func slope(_ dictionary: [Float: Float]) -> Float {
-    return slope(Array(dictionary.keys), Array(dictionary.values))
+/// - Returns: Slope of linear regression of given x-values and y-values.
+func slope <F,C,D> (_ xs: C, _ ys: D) -> F
+    where F: FloatingPoint & Additive, C: Collection, D: Collection, C.Element == F, D.Element == F
+{
+    assert(!xs.isEmpty && !ys.isEmpty)
+    let (xMean,yMean) = (xs.mean!,ys.mean!)
+    return ((xs * ys).mean! - (xMean * yMean)) / (xs.squared.mean! - xMean * xMean)
 }
 
-/// - returns: Function that will calculate the y-value for the given x-value on the regression.
-public func linearRegression(_ dictionary: [Float: Float]) -> (Float) -> Float {
-    return linearRegression(Array(dictionary.keys), Array(dictionary.values))
+extension Sequence where Element: Numeric {
+
+    /// - Returns: All given values risen to the power of two.
+    var squared: [Element] {
+        return map { $0 * $0 }
+    }
 }

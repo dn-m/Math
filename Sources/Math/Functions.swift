@@ -23,13 +23,13 @@ public func mean <F: FloatingPoint> (_ a: F, _ b: F) -> F {
     return (a + b) / 2
 }
 
-/// - Returns: Divisor modulo (as opposed to the dividend implemented by Swift's `%` operator).
+/// - Returns: Divisor modulo (as opposed to the remainder implemented by Swift's `%` operator).
 public func mod <T: BinaryInteger> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend % modulus
     return result < 0 ? result + modulus : result
 }
 
-/// - Returns: Divisor modulo (as opposed to the dividend implemented by Swift's `%` operator).
+/// - Returns: Divisor modulo (as opposed to the remainder implemented by Swift's `%` operator).
 public func mod <T: FloatingPoint> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend.truncatingRemainder(dividingBy: modulus)
     return result < 0 ? result + modulus : result
