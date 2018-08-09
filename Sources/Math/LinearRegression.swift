@@ -7,9 +7,10 @@
 //
 
 import Darwin
+import Algebra
 
 /// - Returns: All given values risen to the power of two.
-public func squared <N: Numeric> (_ values: [N]) -> [N] {
+public func squared <S> (_ values: S) -> [S.Element] where S: Sequence, S.Element: Numeric {
     return values.map { $0 * $0 }
 }
 
@@ -22,7 +23,7 @@ public func * <S> (lhs: S, rhs: S) -> [S.Element] where S: Sequence, S.Element: 
 }
 
 /// - returns: Slope of linear regression of given x-values and y-values.
-public func slope (_ xs: [Float], _ ys: [Float]) -> Float {
+public func slope <C> (_ xs: C, _ ys: C) -> C.Element where C: Collection, C.Element == Float {
     let sum1 = (xs * ys).mean! - (xs.mean! * ys.mean!)
     let sum2 = squared(xs).mean! - pow(xs.mean!, 2)
     return sum1 / sum2

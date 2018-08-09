@@ -8,11 +8,15 @@
 
 import Algebra
 
-extension BidirectionalCollection where Element: FloatingPoint & Additive {
+extension Collection where Element: FloatingPoint & Additive {
 
     /// - Returns: Average of all values contained herein, if there are more than 0 elements.
     /// Otherwise, `nil`.
-    public var mean: Iterator.Element? {
-        return isEmpty ? nil : sum / Element(count)
+    public var mean: Element? {
+        return isEmpty ? nil : map(Sum.init).sum.value / Element(count)
     }
+}
+
+extension Collection where Element: FloatingPoint {
+    
 }
