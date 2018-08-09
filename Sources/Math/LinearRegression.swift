@@ -58,5 +58,5 @@ public func slope(_ dataSet: [Float: Float]) -> Float {
 
 /// - returns: Function that will calculate the y-value for the given x-value on the regression.
 public func linearRegression(_ dataSet: [Float: Float]) -> (Float) -> Float {
-    return linearRegression(Array(dataSet.keys), Array(dataSet.values))
+    return linearRegression(dataSet.keys, dataSet.values)
 }
