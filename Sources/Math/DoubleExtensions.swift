@@ -6,7 +6,7 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-import Foundation
+import Darwin
 
 extension Double {
 
