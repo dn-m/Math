@@ -281,6 +281,16 @@ extension Rational {
 
 extension Rational {
 
+    // MARK: - Hashable
+
+    /// Hash value.
+    public var hashValue: Int {
+        return floatValue.hashValue
+    }
+}
+
+extension Rational {
+
     // MARK: - CustomStringConvertible
 
     /// Printed description.
