@@ -8,9 +8,12 @@
 
 import Darwin
 
-/// - Note: If both values are equal, they are returned in the order in which they were given
-///
-/// - Returns: 2-tuple of two `Comparable` types, in order.
+/**
+ - note: If both values are equal, they are returned in the order in which they were given
+
+ - returns: 2-tuple of two `Comparable` types, in order.
+ - TODO: Move to `Structure/Algorithms`.
+ */
 public func ordered <T: Comparable> (_ a: T, _ b: T) -> (T, T) {
     return a <= b ? (a,b) : (b,a)
 }

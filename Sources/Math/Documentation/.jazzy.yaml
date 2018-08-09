@@ -1,0 +1,42 @@
+theme: fullwidth
+custom_categories:
+  - name: "Rational"
+    children: 
+      - "Rational"
+      - "Fraction"
+  - name: "Power"
+    children: 
+      - "PowerGenerator"
+      - "PowerSequence"
+      - "closestPowerOfTwo(to:)"
+      - "closestPowerOfTwo(under:)"
+      - "closestPowerOfTwo(coefficient:to:)"
+      - "closestPowerOfTwo(coefficient:under:)"
+  - name: "Factors"
+    children:
+      - "isEven"
+      - "isOdd"
+      - "isPrime"
+      - "isDivisible(by:)"
+      - "isPowerOfTwo"
+      - "gcd(_:_:)"
+      - "lcm(_:_:)"
+      - "mod(_:_:)"
+  - name: "Bitwise"
+    children:
+        - "countTrailingZeros(_:)"
+        - "countLeadingZeros(_:)"
+        - ">>>(_:_:)"
+        - ">>>=(_:_:)"
+  - name: "Linear Regression"
+    children:
+        - "quadratic(_:_:_:)"
+        - "slope(_:)"
+        - "slope(_:_:)"
+  - name: "String Formatting"
+    children:
+        - "formatted(digits:)"
+  - name: "Scaling"
+    children:
+        - "scale(from:to:)"
+        - "scaled(from:to:)"
