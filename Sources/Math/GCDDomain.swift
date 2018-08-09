@@ -21,7 +21,7 @@ extension Sequence where Element: BinaryInteger {
 
     /// Greatest common divisor of elements in Sequence.
     ///
-    ///     `[8,12].gcd -> 4`
+    ///     let gcd = [8,12].gcd // => 4
     ///
     public var gcd: Iterator.Element {
         return reduce(0, Math.gcd)
@@ -29,7 +29,7 @@ extension Sequence where Element: BinaryInteger {
 
     /// Least common multiple of elements in Sequence.
     ///
-    ///     `[4,5,6].lcm -> 60`
+    ///     let lcm = [4,5,6].lcm // => 60
     ///
     public var lcm: Iterator.Element {
         return reduce(1, Math.lcm)
