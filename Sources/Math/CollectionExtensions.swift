@@ -1,5 +1,5 @@
 //
-//  BidirectionalCollectionExtensions
+//  CollectionExtensions
 //  Math
 //
 //  Created by James Bean on 2/16/16.

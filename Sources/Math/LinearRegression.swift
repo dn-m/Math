@@ -19,7 +19,7 @@ public func squared <S> (_ values: S) -> [S.Element] where S: Sequence, S.Elemen
 /// - Note: As with `zip`, this operation is finished as soon as the end of the shorter sequence is
 /// reached.
 public func * <S,T> (lhs: S, rhs: T) -> [S.Element]
-    where S: Sequence, S.Element: Numeric, T: Sequence, S.Element == T.Element
+    where S: Sequence, T: Sequence, S.Element: Numeric, S.Element == T.Element
 {
     return zip(lhs,rhs).map(*)
 }
