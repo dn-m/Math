@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Math
+@testable import Math
 
 class LinearRegressionTests: XCTestCase {
 

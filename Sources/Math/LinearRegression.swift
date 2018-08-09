@@ -27,12 +27,18 @@ public func * <S,T> (lhs: S, rhs: T) -> [S.Element]
     return zip(lhs,rhs).map(*)
 }
 
-/// - returns: Slope of linear regression of given x-values and y-values.
-public func slope <C,D> (_ xs: C, _ ys: D) -> C.Element
-    where C: Collection, D: Collection, C.Element == Float, D.Element == Float {
-    let sum1 = (xs * ys).mean! - (xs.mean! * ys.mean!)
-    let sum2 = xs.squared.mean! - pow(xs.mean!, 2)
-    return sum1 / sum2
+/// - returns: Slope of the linear regression.
+public func slope(_ dataSet: [Float: Float]) -> Float {
+    return slope(dataSet.keys, dataSet.values)
+}
+
+/// - Returns: Slope of linear regression of given x-values and y-values.
+func slope <F,C,D> (_ xs: C, _ ys: D) -> F
+    where F: FloatingPoint & Additive, C: Collection, D: Collection, C.Element == F, D.Element == F
+{
+    precondition(!xs.isEmpty && !ys.isEmpty)
+    let (xMean,yMean) = (xs.mean!,ys.mean!)
+    return ((xs * ys).mean! - (xMean * yMean)) / (xs.squared.mean! - xMean * xMean)
 }
 
 /// - returns: Function that will calculate the y-value for the given x-value on the
@@ -51,10 +57,7 @@ public func linearRegression <C,D> (_ xs: C, _ ys: D) -> (C.Element) -> (C.Eleme
     return { x in m * x + intercept }
 }
 
-/// - returns: Slope of the linear regression.
-public func slope(_ dataSet: [Float: Float]) -> Float {
-    return slope(dataSet.keys, dataSet.values)
-}
+
 
 /// - returns: Function that will calculate the y-value for the given x-value on the regression.
 public func linearRegression(_ dataSet: [Float: Float]) -> (Float) -> Float {
