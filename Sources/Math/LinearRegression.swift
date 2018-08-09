@@ -39,7 +39,9 @@ public func slope <C,D> (_ xs: C, _ ys: D) -> C.Element
 ///     regression.
 ///
 /// - note: Modified from: [Ray Wenderlich Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Linear%20Regression)
-public func linearRegression (_ xs: [Float], _ ys: [Float]) -> (Float) -> (Float) {
+public func linearRegression <C,D> (_ xs: C, _ ys: D) -> (C.Element) -> (C.Element)
+    where C: Collection, D: Collection, C.Element == Float, C.Element == D.Element
+{
 
     guard !(xs.isEmpty || ys.isEmpty) else { return { _ in 0 } }
 
