@@ -9,9 +9,12 @@
 import Darwin
 import Algebra
 
-/// - Returns: All given values risen to the power of two.
-public func squared <S> (_ values: S) -> [S.Element] where S: Sequence, S.Element: Numeric {
-    return values.map { $0 * $0 }
+extension Sequence where Element: Numeric {
+
+    /// - Returns: All given values risen to the power of two.
+    var squared: [Element] {
+        return map { $0 * $0 }
+    }
 }
 
 /// - Returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
@@ -27,7 +30,7 @@ public func * <S,T> (lhs: S, rhs: T) -> [S.Element]
 /// - returns: Slope of linear regression of given x-values and y-values.
 public func slope <C> (_ xs: C, _ ys: C) -> C.Element where C: Collection, C.Element == Float {
     let sum1 = (xs * ys).mean! - (xs.mean! * ys.mean!)
-    let sum2 = squared(xs).mean! - pow(xs.mean!, 2)
+    let sum2 = xs.squared.mean! - pow(xs.mean!, 2)
     return sum1 / sum2
 }
 
@@ -46,11 +49,11 @@ public func linearRegression (_ xs: [Float], _ ys: [Float]) -> (Float) -> (Float
 }
 
 /// - returns: Slope of the linear regression.
-public func slope(_ dictionary: [Float: Float]) -> Float {
-    return slope(Array(dictionary.keys), Array(dictionary.values))
+public func slope(_ dataSet: [Float: Float]) -> Float {
+    return slope(Array(dataSet.keys), Array(dataSet.values))
 }
 
 /// - returns: Function that will calculate the y-value for the given x-value on the regression.
-public func linearRegression(_ dictionary: [Float: Float]) -> (Float) -> Float {
-    return linearRegression(Array(dictionary.keys), Array(dictionary.values))
+public func linearRegression(_ dataSet: [Float: Float]) -> (Float) -> Float {
+    return linearRegression(Array(dataSet.keys), Array(dataSet.values))
 }
