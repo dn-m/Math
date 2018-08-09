@@ -147,15 +147,6 @@ class LinearRegressionTests: XCTestCase {
         XCTAssertEqual(slope(xs), expected)
     }
 
-    func testLinearRegressionEmpty() {
-
-        let values: [Float: Float] = [:]
-
-        let expected: Float = 0.0
-
-        XCTAssertEqual(linearRegression(values)(4), expected)
-    }
-
     func testLinearRegressionAfterEasy() {
 
         let values: [Float: Float] = [0: 0, 1: 1, 2: 2, 3: 3]
