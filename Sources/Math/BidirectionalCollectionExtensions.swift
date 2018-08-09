@@ -16,7 +16,3 @@ extension Collection where Element: FloatingPoint & Additive {
         return isEmpty ? nil : map(Sum.init).sum.value / Element(count)
     }
 }
-
-extension Collection where Element: FloatingPoint {
-    
-}
