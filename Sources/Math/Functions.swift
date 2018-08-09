@@ -8,16 +8,6 @@
 
 import Darwin
 
-/**
- - note: If both values are equal, they are returned in the order in which they were given
-
- - returns: 2-tuple of two `Comparable` types, in order.
- - TODO: Move to `Structure/Algorithms`.
- */
-public func ordered <T: Comparable> (_ a: T, _ b: T) -> (T, T) {
-    return a <= b ? (a,b) : (b,a)
-}
-
 /// - Returns: The average to the two given values.
 public func mean <F: FloatingPoint> (_ a: F, _ b: F) -> F {
     return (a + b) / 2
