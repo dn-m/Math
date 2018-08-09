@@ -13,7 +13,7 @@ extension FloatingPoint {
     /// Scales self from the given `source` range to the given `destination` range.
     ///
     ///     var value = 7.0
-    ///     value.scaled(from: 5.0...10.0, to: 5.0...15.0) // => 9.0
+    ///     value.scale(from: 5.0...10.0, to: 5.0...15.0) // => 9.0
     ///
     /// - Parameter source: The range from which this value is being scaled
     /// - Parameter destination: The range to which this value is being scaled
