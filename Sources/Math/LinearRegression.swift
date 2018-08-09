@@ -19,25 +19,10 @@ public func * <S,T> (lhs: S, rhs: T) -> [S.Element]
     return zip(lhs,rhs).map(*)
 }
 
-/// - returns: Function that will calculate the y-value for the given x-value on the regression.
-public func linearRegression <F> (_ dataSet: [F: F]) -> (F) -> F
-    where F: FloatingPoint & Additive
-{
+/// - Returns: A function that will calculate the y-value for the given x-value on the regression.
+public func linearRegression <F> (_ dataSet: [F: F]) -> (F) -> F where F: FloatingPoint & Additive {
+    precondition(!dataSet.isEmpty)
     return linearRegression(dataSet.keys, dataSet.values)
-}
-
-/// - returns: Slope of the linear regression.
-public func slope(_ dataSet: [Float: Float]) -> Float {
-    return slope(dataSet.keys, dataSet.values)
-}
-
-/// - Returns: Slope of linear regression of given x-values and y-values.
-func slope <F,C,D> (_ xs: C, _ ys: D) -> F
-    where F: FloatingPoint & Additive, C: Collection, D: Collection, C.Element == F, D.Element == F
-{
-    assert(!xs.isEmpty && !ys.isEmpty)
-    let (xMean,yMean) = (xs.mean!,ys.mean!)
-    return ((xs * ys).mean! - (xMean * yMean)) / (xs.squared.mean! - xMean * xMean)
 }
 
 /// - Returns: Function that will calculate the y-value for the given x-value on the
@@ -49,8 +34,17 @@ func linearRegression <F,C,D> (_ xs: C, _ ys: D) -> (F) -> (F)
 {
     assert(!xs.isEmpty && !ys.isEmpty)
     let m = slope(xs,ys)
-    let intercept = ys.mean! - (m * xs.mean!)
-    return { x in m * x + intercept }
+    let b = ys.mean! - (m * xs.mean!)
+    return { x in m * x + b }
+}
+
+/// - Returns: Slope of linear regression of given x-values and y-values.
+func slope <F,C,D> (_ xs: C, _ ys: D) -> F
+    where F: FloatingPoint & Additive, C: Collection, D: Collection, C.Element == F, D.Element == F
+{
+    assert(!xs.isEmpty && !ys.isEmpty)
+    let (xMean,yMean) = (xs.mean!,ys.mean!)
+    return ((xs * ys).mean! - (xMean * yMean)) / (xs.squared.mean! - xMean * xMean)
 }
 
 extension Sequence where Element: Numeric {

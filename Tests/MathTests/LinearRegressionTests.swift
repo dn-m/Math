@@ -111,57 +111,15 @@ class LinearRegressionTests: XCTestCase {
         XCTAssertEqual(slope(xs, ys), expected)
     }
 
-    func testDictSlope1() {
-
-        let xs: [Float: Float] = [0: 0, 1: 1, 2: 2, 3: 3]
-
-        let expected: Float = 1
-
-        XCTAssertEqual(slope(xs), expected)
-    }
-
-    func testDictSlopeMinus1() {
-
-        let xs: [Float: Float] = [0: 3, 1: 2, 2: 1, 3: 0]
-
-        let expected: Float = -1
-
-        XCTAssertEqual(slope(xs), expected)
-    }
-
-    func testDictSlopeHalf() {
-
-        let xs: [Float: Float] = [0: 0.5, 1: 1, 2: 1.5, 3: 2]
-
-        let expected: Float = 0.5
-
-        XCTAssertEqual(slope(xs), expected)
-    }
-
-    func testDictSlopeMinusHalf() {
-
-        let xs: [Float: Float] = [0: 1.5, 1: 1, 2: 0.5, 3: 0]
-
-        let expected: Float = -0.5
-
-        XCTAssertEqual(slope(xs), expected)
-    }
-
     func testLinearRegressionAfterEasy() {
-
         let values: [Float: Float] = [0: 0, 1: 1, 2: 2, 3: 3]
-
         let expected: Float = 4
-
         XCTAssertEqual(linearRegression(values)(4), expected)
     }
 
     func testLinearRegressionInsideEasy() {
-
         let values: [Float: Float] = [0: 0, 1: 1, 2: 2, 3: 3]
-
         let expected: Float = 2.5
-
         XCTAssertEqual(linearRegression(values)(2.5), expected)
     }
 }
