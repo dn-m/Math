@@ -5,12 +5,12 @@
 //  Created by James Bean on 8/6/18.
 //
 
+///     let _ = closer(to: 11, a: 12, b: 3) // => 12
+///     let _ = closer(to: 6, a: 4, b: 8) // => 4
+///
 /// - Parameter target: Target value
 /// - Parameter a: First value to check proximity to target value
 /// - Parameter b: First value to check proximity to target value
-///
-///     let _ = closer(to: 11, a: 12, b: 3) // => 12
-///     let _ = closer(to: 6, a: 4, b: 8) // => 4
 ///
 /// - Note: If the distances between both values and the target value are equivalent, the first
 /// value (a) is returned.
