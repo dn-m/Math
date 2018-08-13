@@ -91,14 +91,6 @@ extension ModuloTests {
     ]
 }
 
-extension NumberFormattingTests {
-    static let __allTests = [
-        ("testFormattedDoubleDigits", testFormattedDoubleDigits),
-        ("testFormattedFloatDigits", testFormattedFloatDigits),
-        ("testFormattedIntLeadingZeros", testFormattedIntLeadingZeros),
-    ]
-}
-
 extension OddTests {
     static let __allTests = [
         ("testIntOddFalse", testIntOddFalse),
@@ -233,7 +225,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(LinearRegressionTests.__allTests),
         testCase(MeanTests.__allTests),
         testCase(ModuloTests.__allTests),
-        testCase(NumberFormattingTests.__allTests),
         testCase(OddTests.__allTests),
         testCase(PowerGeneratorTests.__allTests),
         testCase(PowerSequenceTests.__allTests),
