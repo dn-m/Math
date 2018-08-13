@@ -6,12 +6,6 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-#if os(Linux)
-    import Glibc
-#else
-    import Darwin.C
-#endif
-
 extension FloatingPoint {
 
     /// Scales self from the given `source` range to the given `destination` range.
