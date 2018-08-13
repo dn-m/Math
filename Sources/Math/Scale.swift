@@ -6,8 +6,6 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-import Darwin
-
 extension FloatingPoint {
 
     /// Scales self from the given `source` range to the given `destination` range.

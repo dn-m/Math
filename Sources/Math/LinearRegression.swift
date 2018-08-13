@@ -6,7 +6,6 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Darwin
 import Algebra
 
 /// - Returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
