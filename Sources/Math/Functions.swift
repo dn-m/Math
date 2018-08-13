@@ -6,12 +6,6 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-#if os(Linux)
-    import Glibc
-#else
-    import Darwin.C
-#endif
-
 /// - Returns: The average to the two given values.
 public func mean <F: FloatingPoint> (_ a: F, _ b: F) -> F {
     return (a + b) / 2
