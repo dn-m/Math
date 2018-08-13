@@ -6,12 +6,6 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-#if os(Linux)
-    import Glibc
-#else
-    import Darwin.C
-#endif
-
 import Algebra
 
 /// - Returns: All values of `lhs` multiplied by the corresponding value in `rhs`.
