@@ -6,7 +6,11 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-import Darwin
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin.C
+#endif
 
 /// - Returns: A set of 0, 1, or 2 results of the quadratic equation for the given coefficients.
 ///

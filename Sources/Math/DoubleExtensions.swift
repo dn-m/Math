@@ -6,7 +6,11 @@
 //  Copyright © 2017 James Bean. All rights reserved.
 //
 
-import Darwin
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin.C
+#endif
 
 extension Double {
 
