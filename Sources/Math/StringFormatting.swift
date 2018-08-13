@@ -6,8 +6,6 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
-
 extension Int {
 
     /// - returns: `String` with the given amount of digits.
