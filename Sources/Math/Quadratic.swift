@@ -34,9 +34,11 @@
 public func quadratic <T: FloatingPoint> (_ a: T, _ b: T, _ c: T) -> Set<T> {
     if a == 0 { return [] }
     let discriminant = b * b - 4 * a * c
-    guard discriminant >= 0 else { return [] }
+    if discriminant == 0 { return [-b / 2 * a] }
+    guard discriminant > 0 else { return [] }
     let denominator = 2 * a
-    let pos: T = (-b + sqrt(discriminant)) / denominator
-    let neg: T = (-b - sqrt(discriminant)) / denominator
+    let discriminantRoot = sqrt(discriminant)
+    let pos: T = (-b + discriminantRoot) / denominator
+    let neg: T = (-b - discriminantRoot) / denominator
     return [pos,neg]
 }
