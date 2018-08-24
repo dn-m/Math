@@ -87,7 +87,7 @@ extension Rational {
 
     /// Negate `Rational` type arithmetically.
     public static prefix func - (rational: Self) -> Self {
-        return -rational
+        return .init(-rational.numerator, rational.denominator)
     }
 }
 
