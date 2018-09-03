@@ -28,8 +28,6 @@ class GreatestCommonDivisorTests: XCTestCase {
     func testMany() {
         let numbers = (1..<1_000_000)
         let values = zip(numbers, numbers.reversed())
-        measure {
-            values.forEach { a,b in _ = gcd(a,b) }
-        }
+        values.forEach { a,b in _ = gcd(a,b) }
     }
 }

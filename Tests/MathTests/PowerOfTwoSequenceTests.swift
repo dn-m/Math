@@ -1,5 +1,5 @@
 //
-//  PowerSequenceTests.swift
+//  PowerOfTwoSequenceTests.swift
 //  Math
 //
 //  Created by James Bean on 3/2/16.
@@ -9,38 +9,38 @@
 import XCTest
 @testable import Math
 
-class PowerSequenceTests: XCTestCase {
+class PowerOfTwoSequenceTests: XCTestCase {
 
     func testFilter() {
-        let powerSequence = PowerSequence(coefficient: 1, max: 128)
+        let powerSequence = PowerOfTwoSequence(coefficient: 1, max: 128)
         let filtered = powerSequence.filter { $0 >= 4 && $0 <= 32 }
         XCTAssertEqual(filtered, [4,8,16,32])
     }
 
     func testNon2Base_3() {
-        let powerSequence = PowerSequence(coefficient: 3, max: 24)
+        let powerSequence = PowerOfTwoSequence(coefficient: 3, max: 24)
         let mapped = powerSequence.map { $0 }
         XCTAssertEqual(mapped, [3,6,12,24])
     }
 
     func testNon2Base_7() {
-        let powerSequence = PowerSequence(coefficient: 7, max: 56).map { $0 }
+        let powerSequence = PowerOfTwoSequence(coefficient: 7, max: 56).map { $0 }
         XCTAssertEqual(powerSequence, [7,14,28,56])
     }
 
     func testOvershoot() {
-        let powerSequence = PowerSequence(coefficient: 2, max: 13, doOvershoot: true).map { $0 }
+        let powerSequence = PowerOfTwoSequence(coefficient: 2, max: 13, doOvershoot: true).map { $0 }
         XCTAssertEqual(powerSequence, [2,4,8,16])
     }
 
-    func testPowerSequenceContains() {
-        let seq = PowerSequence<Int>()
+    func testPowerOfTwoSequenceContains() {
+        let seq = PowerOfTwoSequence<Int>()
         XCTAssertFalse(seq.contains(31))
         XCTAssert(seq.contains(16))
     }
 
-    func testPowerSequenceMapContains() {
-        let seq = PowerSequence<Int>().map { $0 - 1 }
+    func testPowerOfTwoSequenceMapContains() {
+        let seq = PowerOfTwoSequence<Int>().map { $0 - 1 }
         XCTAssert(seq.contains(1))
         XCTAssert(seq.contains(3))
         XCTAssert(seq.contains(7))
@@ -48,5 +48,17 @@ class PowerSequenceTests: XCTestCase {
         XCTAssert(seq.contains(31))
         XCTAssert(seq.contains(63))
         XCTAssert(seq.contains(127))
+    }
+
+    func testManyPowersOfTwo() {
+        (0..<1_000_000).forEach { n in
+            let _ = powersOfTwo(upTo: n)
+        }
+    }
+
+    func testManyClosestPowerOfTwo() {
+        (0..<1_000_000).forEach { n in
+            let _ = closestPowerOfTwo(to: n)
+        }
     }
 }

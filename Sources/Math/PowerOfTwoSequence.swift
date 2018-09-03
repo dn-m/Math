@@ -1,5 +1,5 @@
 //
-//  PowerSequence.swift
+//  PowerOfTwoSequence.swift
 //  Math
 //
 //  Created by James Bean on 3/2/16.
@@ -7,7 +7,7 @@
 //
 
 /// Power-of-two Sequence.
-public struct PowerSequence <T: FixedWidthInteger>: Sequence {
+public struct PowerOfTwoSequence <T: FixedWidthInteger>: Sequence {
 
     // MARK: - Instance Properties
 
@@ -19,17 +19,17 @@ public struct PowerSequence <T: FixedWidthInteger>: Sequence {
     let max: T
 }
 
-extension PowerSequence {
+extension PowerOfTwoSequence {
 
     // MARK: - Initializers
 
-    /// Create a PowerSequence.
+    /// Create a PowerOfTwoSequence.
     ///
     /// - Parameter coefficient: Coefficient that multiplies base of exponential expression
     /// - Parameter max:         Maximum value of generated powers-of-two
     /// - Parameter doOvershoot: If sequence includes the next power-of-two greater than max
     ///
-    /// - Returns: Initialized PowerSequence
+    /// - Returns: Initialized PowerOfTwoSequence
     public init(coefficient: T = 2, max: T = T.max, doOvershoot: Bool = false) {
         self.coefficient = coefficient
         self.max = max
@@ -38,7 +38,7 @@ extension PowerSequence {
     }
 }
 
-extension PowerSequence: IteratorProtocol {
+extension PowerOfTwoSequence: IteratorProtocol {
 
     // MARK: - IteratorProtocol
 
@@ -58,3 +58,4 @@ extension PowerSequence: IteratorProtocol {
         return result <= max ? result : nil
     }
 }
+
