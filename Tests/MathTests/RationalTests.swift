@@ -255,4 +255,20 @@ class RationalTests: XCTestCase {
         XCTAssertEqual(a, Fraction(44,21))
     }
 
+    func testManyFractionsReudced() {
+        let numbers = (1..<1_000_000)
+        let fractions = zip(numbers,numbers.reversed()).map { n,d in Fraction(n,d) }
+        measure {
+            _ = fractions.map { $0.reduced }
+        }
+    }
+
+    func testManyFractionsNormalized() {
+        let numbers = (1..<1_000_000)
+        let xs = zip(numbers,numbers.reversed()).map { n,d in Fraction(n,d) }
+        let ys = zip(numbers.reversed(),numbers).map { n,d in Fraction(n,d) }
+        measure {
+            _ = zip(xs,ys).map { x,y in x == y }
+        }
+    }
 }
