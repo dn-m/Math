@@ -7,18 +7,19 @@
 //
 
 /// Power-of-two Sequence.
-public class PowerSequence<T: FixedWidthInteger>: Sequence {
-
-    // MARK: - Associated Types
-
-    /// PowerGenerator generates ArithmeticType values.
-    public typealias Iterator = PowerGenerator<T>
+public struct PowerSequence <T: FixedWidthInteger>: Sequence {
 
     // MARK: - Instance Properties
+
+    private var power: T
+    private var hasOvershot: Bool = false
 
     let doOvershoot: Bool
     let coefficient: T
     let max: T
+}
+
+extension PowerSequence {
 
     // MARK: - Initializers
 
@@ -33,14 +34,27 @@ public class PowerSequence<T: FixedWidthInteger>: Sequence {
         self.coefficient = coefficient
         self.max = max
         self.doOvershoot = doOvershoot
+        self.power = coefficient
     }
+}
 
-    // MARK: - Instance Methods
+extension PowerSequence: IteratorProtocol {
 
-    /// Generate sequence of powers-of-two.
-    ///
-    /// - Returns: PowerGenerator
-    public func makeIterator() -> Iterator {
-        return PowerGenerator(coefficient: coefficient, max: max, doOvershoot: doOvershoot)
+    // MARK: - IteratorProtocol
+
+    /// - Returns: The next value in the power-of-two sequence
+    public mutating func next() -> T? {
+        if doOvershoot {
+            if hasOvershot { return nil }
+            if power > max {
+                hasOvershot = true
+                return power
+            }
+        }
+        let result = power
+        let (maybeOverflowingPower, didOverflow) = power.multipliedReportingOverflow(by: 2)
+        guard !didOverflow else { return nil }
+        self.power = maybeOverflowingPower
+        return result <= max ? result : nil
     }
 }
