@@ -24,4 +24,12 @@ class GreatestCommonDivisorTests: XCTestCase {
         let greatestCommonDivisor = gcd(a,b)
         XCTAssertEqual(greatestCommonDivisor, 4)
     }
+
+    func testMany() {
+        let numbers = (1..<1_000_000)
+        let values = zip(numbers, numbers.reversed())
+        measure {
+            values.forEach { a,b in _ = gcd(a,b) }
+        }
+    }
 }
