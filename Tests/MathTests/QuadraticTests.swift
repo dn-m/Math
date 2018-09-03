@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import DataStructures
 import Math
 
 class QuadraticTests: XCTestCase {
@@ -29,5 +30,14 @@ class QuadraticTests: XCTestCase {
     func testQuadraticDouble() {
         let result: Set<Double> = quadratic(5,6,1)
         XCTAssertEqual(result, [-1, -0.2])
+    }
+
+    func testMany() {
+        let a = stride(from: 0.0, to: 1_000_000, by: 1)
+        let b = a.reversed()
+        let c = zip(a,b).map(*)
+        measure {
+            zip(a,b,c).forEach { a,b,c in let _ = quadratic(a,b,c) }
+        }
     }
 }

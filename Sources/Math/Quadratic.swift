@@ -31,6 +31,7 @@
 ///
 /// In this case, there are two results.
 ///
+@inlinable
 public func quadratic <T: FloatingPoint> (_ a: T, _ b: T, _ c: T) -> Set<T> {
     if a == 0 { return [] }
     let discriminant = b * b - 4 * a * c

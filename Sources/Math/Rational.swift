@@ -109,6 +109,7 @@ extension Rational {
 extension Rational {
 
     /// - Returns: Representation of a `Rational` value with a given `numerator`.
+    @inlinable
     public func scaling(numerator newNumerator: Int) -> Self {
         guard newNumerator != numerator else { return self }
         let quotient = Double(newNumerator) / Double(numerator)
@@ -118,6 +119,7 @@ extension Rational {
     }
 
     /// - Returns: Representation of a `Rational` value with a given `denominator`.
+    @inlinable
     public func scaling(denominator newDenominator: Int) -> Self {
         guard newDenominator != denominator else { return self }
         guard numerator != 0 else { return Self(0, newDenominator) }
@@ -239,6 +241,7 @@ extension Rational {
 extension Rational {
 
     /// Reduced version of `self`.
+    @inlinable
     public var reduced: Self {
         let common = gcd(abs(numerator), abs(denominator))
         let sign = denominator > 0 ? 1 : -1
@@ -252,6 +255,7 @@ extension Rational {
 
     /// - returns: `true` if the left `Rational` is less than the right `Rational`. Otherwise,
     /// `false`.
+    @inlinable
     public static func < (lhs: Self, rhs: Self) -> Bool {
         let (lhs, rhs) = normalized(lhs, rhs)
         return lhs.numerator < rhs.numerator
@@ -263,17 +267,20 @@ extension Rational {
     // MARK: - Equatable
 
     /// - returns: Pair of `Rational` values, each in their most-reduced form.
+    @inlinable
     public static func reduced <R: Rational> (_ a: R, _ b: R) -> (R, R) {
         return (a.reduced, b.reduced)
     }
 
     /// - returns: Pair of `Rational` values, with common denominators.
+    @inlinable
     public static func normalized <R: Rational> (_ a: R, _ b: R) -> (R, R) {
         let commonDenominator = lcm(a.denominator, b.denominator)
         return map(a,b) { $0.scaling(denominator: commonDenominator) }
     }
 
     /// - returns: `true` if both values are equivalent in their most-reduced form.
+    @inlinable
     public static func == (lhs: Self, rhs: Self) -> Bool {
         let (lhs, rhs) = normalized(lhs, rhs)
         return lhs.numerator == rhs.numerator

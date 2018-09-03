@@ -255,24 +255,20 @@ class RationalTests: XCTestCase {
         XCTAssertEqual(a, Fraction(44,21))
     }
 
-    // FIXME: Reintroduce once Strideable is recovered
-//    func testStrideableSameDenominator() {
-//        let result = Array(stride(from: Fraction.zero, to: Fraction(4,4), by: Fraction(1,4)))
-//        let expected = [Fraction(0,1), Fraction(1,4), Fraction(2,4), Fraction(3,4)]
-//        XCTAssertEqual(result, expected)
-//    }
-//
-//    func testStrideableDifferentDenominator() {
-//
-//        let result = Array(stride(from: Fraction(1,4), to: Fraction(9,16), by: Fraction(3,32)))
-//
-//        let expected = [
-//            Fraction(8,32),
-//            Fraction(11,32),
-//            Fraction(14,32),
-//            Fraction(17,32)
-//        ]
-//
-//        XCTAssertEqual(result, expected)
-//    }
+    func testManyFractionsReudced() {
+        let numbers = (1..<1_000_000)
+        let fractions = zip(numbers,numbers.reversed()).map { n,d in Fraction(n,d) }
+        measure {
+            _ = fractions.map { $0.reduced }
+        }
+    }
+
+    func testManyFractionsNormalized() {
+        let numbers = (1..<1_000_000)
+        let xs = zip(numbers,numbers.reversed()).map { n,d in Fraction(n,d) }
+        let ys = zip(numbers.reversed(),numbers).map { n,d in Fraction(n,d) }
+        measure {
+            _ = zip(xs,ys).map { x,y in x == y }
+        }
+    }
 }
