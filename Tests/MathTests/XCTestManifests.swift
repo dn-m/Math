@@ -28,6 +28,7 @@ extension GreatestCommonDivisorTests {
     static let __allTests = [
         ("testIntAGreaterThanB", testIntAGreaterThanB),
         ("testIntALessThanB", testIntALessThanB),
+        ("testMany", testMany),
     ]
 }
 
@@ -98,22 +99,14 @@ extension OddTests {
     ]
 }
 
-extension PowerGeneratorTests {
-    static let __allTests = [
-        ("testInt_1", testInt_1),
-        ("testInt_3", testInt_3),
-        ("testOvershoot", testOvershoot),
-    ]
-}
-
-extension PowerSequenceTests {
+extension PowerOfTwoSequenceTests {
     static let __allTests = [
         ("testFilter", testFilter),
         ("testNon2Base_3", testNon2Base_3),
         ("testNon2Base_7", testNon2Base_7),
         ("testOvershoot", testOvershoot),
-        ("testPowerSequenceContains", testPowerSequenceContains),
-        ("testPowerSequenceMapContains", testPowerSequenceMapContains),
+        ("testPowerOfTwoSequenceContains", testPowerOfTwoSequenceContains),
+        ("testPowerOfTwoSequenceMapContains", testPowerOfTwoSequenceMapContains),
     ]
 }
 
@@ -145,6 +138,7 @@ extension QuadraticTests {
     static let __allTests = [
         ("testIsEmptyDouble", testIsEmptyDouble),
         ("testIsEmptyFloat", testIsEmptyFloat),
+        ("testMany", testMany),
         ("testQuadraticDouble", testQuadraticDouble),
         ("testQuadraticFloat", testQuadraticFloat),
     ]
@@ -170,6 +164,8 @@ extension RationalTests {
         ("testInit", testInit),
         ("testInverse", testInverse),
         ("testInverseNegative", testInverseNegative),
+        ("testManyFractionsNormalized", testManyFractionsNormalized),
+        ("testManyFractionsReudced", testManyFractionsReudced),
         ("testMultiplySameDenominators", testMultiplySameDenominators),
         ("testMultitplyDifferentDenominators", testMultitplyDifferentDenominators),
         ("testMultitplyDifferentDenominatorsAndAssign", testMultitplyDifferentDenominatorsAndAssign),
@@ -226,8 +222,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(MeanTests.__allTests),
         testCase(ModuloTests.__allTests),
         testCase(OddTests.__allTests),
-        testCase(PowerGeneratorTests.__allTests),
-        testCase(PowerSequenceTests.__allTests),
+        testCase(PowerOfTwoSequenceTests.__allTests),
         testCase(PowerTests.__allTests),
         testCase(PrimeTests.__allTests),
         testCase(QuadraticTests.__allTests),

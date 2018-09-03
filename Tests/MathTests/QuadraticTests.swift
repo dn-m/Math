@@ -36,8 +36,6 @@ class QuadraticTests: XCTestCase {
         let a = stride(from: 0.0, to: 1_000_000, by: 1)
         let b = a.reversed()
         let c = zip(a,b).map(*)
-        measure {
-            zip(a,b,c).forEach { a,b,c in let _ = quadratic(a,b,c) }
-        }
+        zip(a,b,c).forEach { a,b,c in let _ = quadratic(a,b,c) }
     }
 }
