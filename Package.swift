@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "Math", targets: ["Math"])
     ],
     dependencies: [
-        .package(url: "https://github.com/dn-m/Structure", from: "0.3.1"),
+        .package(url: "https://github.com/dn-m/Structure", .branch("swift-5")),
     ],
     targets: [
         .target(name: "Math", dependencies: ["Algebra", "DataStructures"]),
