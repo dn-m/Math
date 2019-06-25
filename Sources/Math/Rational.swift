@@ -293,7 +293,8 @@ extension Rational {
 
     /// Hash value.
     ///
-    /// - Note: `Rational` values are hashed by their `floatValue`. That is to say that `1/3` and `2/6` are equivalent.
+    /// - Note: `Rational` values are hashed by their `floatValue`. That is to say that `1/3` and `2/6` are hashed
+    /// equivalently.
     public func hash(into hasher: inout Hasher) {
         hasher.combine(floatValue)
     }
