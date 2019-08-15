@@ -15,7 +15,7 @@ extension BinaryInteger {
 
     /// - returns: `true` if this value is not divisible by 2. Otherwise, `false`.
     public var isOdd: Bool {
-        return self % 2 != 0
+        return !isEven
     }
 
     /// - returns: `true` if this value is a prime number. Otherwise, `false`.
@@ -39,9 +39,14 @@ extension BinaryInteger {
         return true
     }
 
-    /// - returns: `true` if this value if divisible by the given `value`. Otherwise, `false`.
+    /// - Returns: `true` if this value if divisible by the given `value`. Otherwise, `false`.
+    @available(swift, deprecated: 5.0, message: "Use Swift's built-in `isMultiple(of:)")
     public func isDivisible(by value: Self) -> Bool {
+        #if swift(<5.0)
         return self % value == 0
+        #else
+        return isMultiple(of: value)
+        #endif
     }
 
     /// - returns: `true` if this value is a power of two. Otherwise, `false`.
