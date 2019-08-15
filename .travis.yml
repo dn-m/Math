@@ -10,7 +10,7 @@ install:
 env:
   - SWIFT_VERSION=5.0
   - SWIFT_VERSION=5.0.1
-  - SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2019-08-01-a
+  - SWIFT_VERSION=5.1-DEVELOPMENT-SNAPSHOT-2019-08-14-a 
 script:
   - swift test
 after_success: 
