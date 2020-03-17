@@ -11,6 +11,8 @@
 public func chineseRemainderTheorem <S: Sequence, I: BinaryInteger> (_ a: S, _ n: S) -> I
     where S.Element == I
 {
+    // Ensure that all pairwise values of `a` and `n` are coprime.
+    assert(zip(a,n).allSatisfy(coprime))
     let product = n.reduce(1,*)
     let modInvs: [I] = n.map { n in
         let p = product / n
