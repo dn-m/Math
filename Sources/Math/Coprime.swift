@@ -6,6 +6,4 @@
 //
 
 /// - Returns: `true` if the given values are coprime. Otherwise, `false`.
-public func coprime <I: BinaryInteger> (_ a: I, _ b: I) -> Bool {
-    return gcd(a,b) == 1
-}
+public func coprime <I: BinaryInteger> (_ a: I, _ b: I) -> Bool { gcd(a,b) == 1 }
